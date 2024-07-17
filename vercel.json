@@ -1,5 +1,15 @@
 {
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/api" }
-    ]
-  }
+  "version": 2,
+  "builds": [
+    {
+      "src": "dist/bundle.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/dist/bundle.js"
+    }
+  ]
+}
